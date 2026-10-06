@@ -1,0 +1,132 @@
+{
+  "site_name": "La Beauté de l'Islam",
+  "nav": {
+    "home": "Accueil",
+    "god": "Dieu existe-t-il ?",
+    "muhammad": "Muhammad ﷺ",
+    "jesus": "Jésus et Marie",
+    "women": "Les Femmes",
+    "convert": "Devenir Musulman",
+    "quran": "Coran",
+    "hadiths": "Hadiths"
+  },
+  "hero": {
+    "badge": "2026 · Découvrir",
+    "title": "Qui est Dieu ?",
+    "subtitle": "Découvrez la beauté de l'Islam par la raison et le cœur.",
+    "cta1": "Commencer le voyage",
+    "cta2": "Lire le Coran",
+    "owner": "Proprietaire : Ouachemi Muhammad"
+  },
+  "cards": {
+    "god_title": "Dieu existe-t-il ?",
+    "god_desc": "Seize preuves rationnelles qui pointent vers un Créateur.",
+    "muhammad_title": "Qui est Muhammad ?",
+    "muhammad_desc": "La vie, le caractère et l'héritage de miséricorde du dernier Prophète.",
+    "jesus_title": "Jésus et Marie",
+    "jesus_desc": "Leur place honorée dans le Coran — aimés, mais non divinisés.",
+    "women_title": "Les Femmes en Islam",
+    "women_desc": "Répondre aux idées reçues avec preuves et dignité.",
+    "explore": "Explorer"
+  },
+  "god_page": {
+    "title": "Dieu existe-t-il ?",
+    "subtitle": "Seize réflexions rationnelles pour le chercheur sincère.",
+    "think": "Réfléchissez :",
+    "back": "Retour à l'accueil"
+  },
+  "muhammad_page": {
+    "title": "Qui est Muhammad ﷺ ?",
+    "subtitle": "L'homme dont le caractère a changé le monde — une miséricorde pour toutes les nations.",
+    "life": "Sa Vie",
+    "life_sub": "Sept moments décisifs du parcours du Prophète.",
+    "character": "Son Caractère",
+    "character_sub": "Huit vertus qui ont façonné une civilisation.",
+    "testimonies": "Ce que disent les savants non-musulmans",
+    "testimonies_sub": "Témoignages d'historiens et penseurs occidentaux.",
+    "with_nonmuslims": "Ses relations avec les non-musulmans",
+    "with_nonmuslims_sub": "Justice, miséricorde et honneur — au-delà de la foi.",
+    "verses": "Versets du Coran à son sujet",
+    "back": "Retour à l'accueil"
+  },
+  "jesus_page": {
+    "title": "Jésus et Marie en Islam",
+    "subtitle": "Honorés au-delà de toute mesure — mais non divinisés.",
+    "jesus_place": "La place de Jésus",
+    "mary_place": "La place de Marie",
+    "surah_maryam": "Sourate Maryam (Chapitre 19)",
+    "surah_maryam_sub": "Les plus beaux versets sur Marie et son fils dans le Coran.",
+    "verses": "25 versets sur Jésus et Marie",
+    "verses_sub": "Mentionnés dans le Coran à travers plusieurs chapitres.",
+    "comparison": "L'Islam et les Évangiles",
+    "comparison_sub": "Où ils s'accordent — et où ils diffèrent.",
+    "message": "Un message à nos lecteurs chrétiens",
+    "islam_col": "Islam",
+    "gospel_col": "Les Évangiles",
+    "topic_col": "Sujet",
+    "read_more": "Lire le Coran",
+    "back": "Retour à l'accueil"
+  },
+  "footer": {
+    "shahada": "Il n'y a de dieu qu'Allah, et Muhammad est Son Messager",
+    "rights": "Tous droits réservés.",
+    "owner": "Proprietaire : Ouachemi Muhammad",
+    "made_in": "Fait en Algerie"
+  },
+  "women_page": {
+    "title": "Les Femmes en Islam",
+    "subtitle": "Dignite, honneur et droits - a la source.",
+    "misconceptions": "Six Idees Recues Courantes",
+    "misconceptions_sub": "Des reponses honnetes aux affirmations les plus repetees.",
+    "claim": "L'Affirmation",
+    "answer": "La Reponse",
+    "stories": "Femmes de l'Islam",
+    "stories_sub": "Trois femmes qui ont faconne une civilisation.",
+    "rights": "Droits Garantis par l'Islam",
+    "rights_sub": "Bien avant les chartes modernes.",
+    "verses": "Versets sur les Femmes",
+    "verses_sub": "De la source elle-meme.",
+    "testimonies": "Femmes Occidentales Converties",
+    "testimonies_sub": "Leurs propres mots.",
+    "back": "Retour"
+  },
+  "convert_page": {
+    "title": "Comment Devenir Musulman",
+    "subtitle": "Un chemin simple et sincere - sans intermediaires, sans frais.",
+    "steps": "Quatre Etapes Simples",
+    "steps_sub": "De la croyance a l'appartenance.",
+    "shahada": "La Shahada - Temoignage de Foi",
+    "shahada_sub": "Prononcez-la avec une pleine sincerite pour devenir musulman.",
+    "shahada_meaning": "Je temoigne qu'il n'y a de dieu qu'Allah, et je temoigne que Muhammad est le Messager d'Allah.",
+    "after": "Que Faire Apres",
+    "after_sub": "Les premiers pas de votre nouveau voyage.",
+    "stories": "Des Musulmans Avant Vous",
+    "stories_sub": "Leurs parcours pourront vous inspirer.",
+    "support": "Besoin d'Aide ?",
+    "support_sub": "Nous sommes la pour vous aider.",
+    "email": "Contactez-Nous",
+    "back": "Retour"
+  },
+  "quran_page": {
+    "title": "Le Saint Coran",
+    "subtitle": "114 chapitres - la revelation finale de Dieu.",
+    "search": "Rechercher dans le Coran...",
+    "search_btn": "Chercher",
+    "back": "Retour au Coran"
+  },
+  "hadiths_page": {
+    "title": "Hadiths Choisis",
+    "subtitle": "100 paroles authentiques du Prophete Muhammad.",
+    "all": "Tous",
+    "ethics": "Ethique",
+    "mercy": "Misericorde",
+    "knowledge": "Savoir",
+    "family": "Famille",
+    "nonmuslims": "Non-Musulmans",
+    "search": "Chercher les hadiths...",
+    "count": "hadiths",
+    "narrator": "Rapporteur",
+    "source": "Source"
+  },
+  "tagline": "Discover the beauty of Islam through reason and heart."
+}

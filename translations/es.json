@@ -1,0 +1,132 @@
+{
+  "site_name": "La Belleza del Islam",
+  "nav": {
+    "home": "Inicio",
+    "god": "¿Existe Dios?",
+    "muhammad": "Muhammad ﷺ",
+    "jesus": "Jesús y María",
+    "women": "Mujeres en el Islam",
+    "convert": "Ser Musulmán",
+    "quran": "Corán",
+    "hadiths": "Hadices"
+  },
+  "hero": {
+    "badge": "2026 · Descubrir",
+    "title": "¿Quién es Dios?",
+    "subtitle": "Descubre la belleza del Islam a través de la razón y el corazón.",
+    "cta1": "Comenzar el viaje",
+    "cta2": "Leer el Corán",
+    "owner": "Propietario: Ouachemi Muhammad"
+  },
+  "cards": {
+    "god_title": "¿Existe Dios?",
+    "god_desc": "Dieciséis pruebas racionales que apuntan a un Creador.",
+    "muhammad_title": "¿Quién es Muhammad?",
+    "muhammad_desc": "La vida, el carácter y el legado de misericordia del último Profeta.",
+    "jesus_title": "Jesús y María",
+    "jesus_desc": "Su lugar honrado en el Corán — amados, pero no divinizados.",
+    "women_title": "Mujeres en el Islam",
+    "women_desc": "Respondiendo a conceptos erróneos con evidencia y dignidad.",
+    "explore": "Explorar"
+  },
+  "god_page": {
+    "title": "¿Existe Dios?",
+    "subtitle": "Dieciséis reflexiones racionales para el buscador sincero.",
+    "think": "Reflexiona:",
+    "back": "Volver al inicio"
+  },
+  "muhammad_page": {
+    "title": "¿Quién es Muhammad ﷺ?",
+    "subtitle": "El hombre cuyo carácter cambió el mundo — una misericordia para todas las naciones.",
+    "life": "Su Vida",
+    "life_sub": "Siete momentos decisivos en el camino del Profeta.",
+    "character": "Su Carácter",
+    "character_sub": "Ocho virtudes que formaron una civilización.",
+    "testimonies": "Lo que dicen los sabios no musulmanes",
+    "testimonies_sub": "Testimonios de historiadores y pensadores occidentales.",
+    "with_nonmuslims": "Su trato con los no musulmanes",
+    "with_nonmuslims_sub": "Justicia, misericordia y honor — más allá de la fe.",
+    "verses": "Versículos del Corán sobre él",
+    "back": "Volver al inicio"
+  },
+  "jesus_page": {
+    "title": "Jesús y María en el Islam",
+    "subtitle": "Honrados sin medida — pero no divinizados.",
+    "jesus_place": "El lugar de Jesús",
+    "mary_place": "El lugar de María",
+    "surah_maryam": "Sura Maryam (Capítulo 19)",
+    "surah_maryam_sub": "Los versículos más bellos sobre María y su hijo en el Corán.",
+    "verses": "25 versículos sobre Jesús y María",
+    "verses_sub": "Mencionados en el Corán a través de varios capítulos.",
+    "comparison": "El Islam y los Evangelios",
+    "comparison_sub": "Donde coinciden — y donde difieren.",
+    "message": "Un mensaje a nuestros lectores cristianos",
+    "islam_col": "Islam",
+    "gospel_col": "Los Evangelios",
+    "topic_col": "Tema",
+    "read_more": "Leer el Corán",
+    "back": "Volver al inicio"
+  },
+  "footer": {
+    "shahada": "No hay más dios que Allah, y Muhammad es Su Mensajero",
+    "rights": "Todos los derechos reservados.",
+    "owner": "Propietario: Ouachemi Muhammad",
+    "made_in": "Hecho en Argelia"
+  },
+  "women_page": {
+    "title": "Mujeres en el Islam",
+    "subtitle": "Dignidad, honor y derechos - desde la fuente.",
+    "misconceptions": "Seis Conceptos Erroneos Comunes",
+    "misconceptions_sub": "Respuestas honestas a las afirmaciones mas repetidas.",
+    "claim": "La Afirmacion",
+    "answer": "La Respuesta",
+    "stories": "Mujeres del Islam",
+    "stories_sub": "Tres mujeres que formaron una civilizacion.",
+    "rights": "Derechos Garantizados por el Islam",
+    "rights_sub": "Mucho antes de las cartas modernas.",
+    "verses": "Versiculos sobre las Mujeres",
+    "verses_sub": "Desde la fuente misma.",
+    "testimonies": "Mujeres Occidentales Convertidas",
+    "testimonies_sub": "Sus propias palabras.",
+    "back": "Volver"
+  },
+  "convert_page": {
+    "title": "Como Ser Musulman",
+    "subtitle": "Un camino simple y sincero - sin intermediarios, sin tarifas.",
+    "steps": "Cuatro Pasos Simples",
+    "steps_sub": "De la creencia a la pertenencia.",
+    "shahada": "La Shahada - Testimonio de Fe",
+    "shahada_sub": "Pronunciala con plena sinceridad para ser musulman.",
+    "shahada_meaning": "Doy testimonio de que no hay mas dios que Allah, y que Muhammad es el Mensajero de Allah.",
+    "after": "Que Hacer Despues",
+    "after_sub": "Los primeros pasos en tu nuevo viaje.",
+    "stories": "Musulmanes Antes Que Tu",
+    "stories_sub": "Sus caminos pueden inspirarte.",
+    "support": "Necesitas Ayuda?",
+    "support_sub": "Estamos aqui para ayudarte.",
+    "email": "Contactanos",
+    "back": "Volver"
+  },
+  "quran_page": {
+    "title": "El Sagrado Coran",
+    "subtitle": "114 capitulos - la revelacion final de Dios.",
+    "search": "Buscar en el Coran...",
+    "search_btn": "Buscar",
+    "back": "Volver al Coran"
+  },
+  "hadiths_page": {
+    "title": "Hadices Seleccionados",
+    "subtitle": "100 dichos autenticos del Profeta Muhammad.",
+    "all": "Todos",
+    "ethics": "Etica",
+    "mercy": "Misericordia",
+    "knowledge": "Conocimiento",
+    "family": "Familia",
+    "nonmuslims": "No Musulmanes",
+    "search": "Buscar hadices...",
+    "count": "hadices",
+    "narrator": "Narrador",
+    "source": "Fuente"
+  },
+  "tagline": "Discover the beauty of Islam through reason and heart."
+}

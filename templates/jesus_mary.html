@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}{{ t('jesus_page.title') }} — {{ site_name }}{% endblock %}
+{% block content %}
+
+<div class="container">
+  <h1 class="page-title">{{ t('jesus_page.title') }}</h1>
+  <p class="page-subtitle">{{ t('jesus_page.subtitle') }}</p>
+
+  <!-- ===== Jesus ===== -->
+  <h2 class="section-head">{{ t('jesus_page.jesus_place') }}</h2>
+  <div class="prose-block">
+    <p>{{ jesus_intro[lang] }}</p>
+  </div>
+
+  <!-- ===== Mary ===== -->
+  <h2 class="section-head">{{ t('jesus_page.mary_place') }}</h2>
+  <div class="prose-block">
+    <p>{{ mary_intro[lang] }}</p>
+  </div>
+
+  <!-- ===== Surah Maryam preview ===== -->
+  <h2 class="section-head">{{ t('jesus_page.surah_maryam') }}</h2>
+  <p class="section-lead">{{ t('jesus_page.surah_maryam_sub') }}</p>
+
+  {% for v in maryam %}
+  <div class="verse-block">
+    <div class="verse-block-num">19:{{ v.num }}</div>
+    <div class="verse-ar">{{ v.ar }}</div>
+    <div class="verse-en">"{{ v.en }}"</div>
+    <span class="verse-ref">Quran 19:{{ v.num }}</span>
+  </div>
+  {% endfor %}
+
+  <!-- ===== Comparison ===== -->
+  <h2 class="section-head">{{ t('jesus_page.comparison') }}</h2>
+  <p class="section-lead">{{ t('jesus_page.comparison_sub') }}</p>
+
+  <div class="comp-table-wrap">
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>{{ t('jesus_page.topic_col') }}</th>
+          <th>{{ t('jesus_page.islam_col') }}</th>
+          <th>{{ t('jesus_page.gospel_col') }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in comparison %}
+        <tr>
+          <td class="topic">{{ row.topic[lang] }}</td>
+          <td class="islam">{{ row.islam[lang] }}</td>
+          <td class="gospel">{{ row.gospel[lang] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== Message to Christians ===== -->
+  <h2 class="section-head">{{ t('jesus_page.message') }}</h2>
+  <div class="message-box">
+    <div class="message-icon">🕊</div>
+    <p>{{ message[lang] }}</p>
+  </div>
+
+  <div class="cta-row" style="margin-top:60px">
+    <a href="{{ url_for('index') }}" class="btn btn-ghost">← {{ t('jesus_page.back') }}</a>
+    <a href="{{ url_for('muhammad') }}" class="btn btn-primary">{{ t('nav.muhammad') }} →</a>
+  </div>
+</div>
+
+{% endblock %}

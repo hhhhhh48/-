@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}{{ surah['name_en'] }} — {{ site_name }}{% endblock %}
+{% block content %}
+
+<div class="container">
+  <div style="text-align:center;margin-bottom:40px">
+    <h1 class="page-title" style="margin-bottom:8px">{{ surah['name_en'] }}</h1>
+    <div style="font-family:'Cairo',serif;color:var(--gold);font-size:1.6rem;margin-bottom:12px">{{ surah['name_ar'] }}</div>
+    <p style="color:var(--muted)">{{ surah['name_translation'] }} · {{ surah['verses_count'] }} verses · {{ surah['place'] }}</p>
+  </div>
+
+  {% for v in verses %}
+  <div class="verse-block">
+    <div class="verse-block-num">{{ v['number'] }}</div>
+    <div class="verse-ar">{{ v['ar'] }}</div>
+    {% if v['en'] %}<div class="verse-en"><strong style="color:var(--cyan);font-size:.7rem;letter-spacing:1px">EN </strong>{{ v['en'] }}</div>{% endif %}
+    {% if v['fr'] %}<div class="verse-en"><strong style="color:var(--cyan);font-size:.7rem;letter-spacing:1px">FR </strong>{{ v['fr'] }}</div>{% endif %}
+    {% if v['es'] %}<div class="verse-en"><strong style="color:var(--cyan);font-size:.7rem;letter-spacing:1px">ES </strong>{{ v['es'] }}</div>{% endif %}
+  </div>
+  {% endfor %}
+
+  <div class="cta-row" style="margin-top:50px">
+    <a href="{{ url_for('quran') }}" class="btn btn-ghost">← {{ t('quran_page.back') }}</a>
+  </div>
+</div>
+
+{% endblock %}

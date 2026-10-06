@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}{{ t('hadiths_page.title') }} — {{ site_name }}{% endblock %}
+{% block content %}
+
+<div class="container">
+  <h1 class="page-title">{{ t('hadiths_page.title') }}</h1>
+  <p class="page-subtitle">{{ t('hadiths_page.subtitle') }}</p>
+
+  <div class="filters">
+    <a href="{{ url_for('hadiths') }}" class="{% if not cat %}active{% endif %}">{{ t('hadiths_page.all') }}</a>
+    <a href="{{ url_for('hadiths', cat='ethics') }}" class="{% if cat=='ethics' %}active{% endif %}">{{ t('hadiths_page.ethics') }}</a>
+    <a href="{{ url_for('hadiths', cat='mercy') }}" class="{% if cat=='mercy' %}active{% endif %}">{{ t('hadiths_page.mercy') }}</a>
+    <a href="{{ url_for('hadiths', cat='knowledge') }}" class="{% if cat=='knowledge' %}active{% endif %}">{{ t('hadiths_page.knowledge') }}</a>
+    <a href="{{ url_for('hadiths', cat='family') }}" class="{% if cat=='family' %}active{% endif %}">{{ t('hadiths_page.family') }}</a>
+    <a href="{{ url_for('hadiths', cat='non-muslims') }}" class="{% if cat=='non-muslims' %}active{% endif %}">{{ t('hadiths_page.nonmuslims') }}</a>
+  </div>
+
+  <form method="get" class="search-box">
+    <input type="text" name="q" value="{{ q }}" placeholder="{{ t('hadiths_page.search') }}">
+    {% if cat %}<input type="hidden" name="cat" value="{{ cat }}">{% endif %}
+    <button type="submit" class="btn btn-primary">{{ t('quran_page.search_btn') }}</button>
+  </form>
+
+  <p style="text-align:center;color:var(--muted);margin-bottom:24px">{{ hadiths|length }} {{ t('hadiths_page.count') }}</p>
+
+  {% for h in hadiths %}
+  <div class="hadith-item">
+    <div class="hadith-ar">{{ h['text_ar'] }}</div>
+    <div class="hadith-lang"><strong>EN</strong>{{ h['text_en'] }}</div>
+    {% if h['text_fr'] %}<div class="hadith-lang"><strong>FR</strong>{{ h['text_fr'] }}</div>{% endif %}
+    {% if h['text_es'] %}<div class="hadith-lang"><strong>ES</strong>{{ h['text_es'] }}</div>{% endif %}
+    <div class="hadith-meta">
+      <span class="cat-tag">{{ h['category'] }}</span>
+      <span><strong>{{ t('hadiths_page.narrator') }}:</strong> {{ h['narrator'] }}</span>
+      <span><strong>{{ t('hadiths_page.source') }}:</strong> {{ h['source'] }}</span>
+    </div>
+  </div>
+  {% endfor %}
+
+  {% if not hadiths %}
+  <p style="text-align:center;color:var(--muted);padding:60px">
+    DB empty. Run: <code style="color:var(--gold)">python seed_hadiths.py</code>
+  </p>
+  {% endif %}
+</div>
+
+{% endblock %}

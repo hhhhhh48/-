@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}{{ t('women_page.title') }} — {{ site_name }}{% endblock %}
+{% block content %}
+
+<div class="container">
+  <h1 class="page-title">{{ t('women_page.title') }}</h1>
+  <p class="page-subtitle">{{ t('women_page.subtitle') }}</p>
+
+  <div class="prose-block"><p>{{ intro[lang] }}</p></div>
+
+  <h2 class="section-head">{{ t('women_page.misconceptions') }}</h2>
+  <p class="section-lead">{{ t('women_page.misconceptions_sub') }}</p>
+
+  {% for m in misconceptions %}
+  <div class="misconception-block">
+    <div class="misc-head">
+      <div class="misc-num">{{ m.num }}</div>
+      <div class="misc-title">{{ m.title[lang] }}</div>
+    </div>
+    <div class="misc-claim">
+      <span class="misc-label">{{ t('women_page.claim') }}</span>
+      {{ m.misc[lang] }}
+    </div>
+    <div class="misc-answer">
+      <span class="misc-label ans">{{ t('women_page.answer') }}</span>
+      {{ m.answer[lang] }}
+    </div>
+    <span class="misc-ref">{{ m.ref }}</span>
+  </div>
+  {% endfor %}
+
+  <h2 class="section-head">{{ t('women_page.stories') }}</h2>
+  <p class="section-lead">{{ t('women_page.stories_sub') }}</p>
+
+  <div class="story-grid">
+    {% for s in stories %}
+    <div class="story-card">
+      <div class="story-icon">{{ s.icon }}</div>
+      <h3>{{ s.name[lang] }}</h3>
+      <div class="story-role">{{ s.role[lang] }}</div>
+      <p>{{ s.text[lang] }}</p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <h2 class="section-head">{{ t('women_page.rights') }}</h2>
+  <p class="section-lead">{{ t('women_page.rights_sub') }}</p>
+
+  <div class="rights-grid">
+    {% for r in rights %}
+    <div class="right-item">
+      <span class="right-check">+</span>
+      {{ r[lang] }}
+    </div>
+    {% endfor %}
+  </div>
+
+  <h2 class="section-head">{{ t('women_page.verses') }}</h2>
+  <p class="section-lead">{{ t('women_page.verses_sub') }}</p>
+
+  {% for v in verses %}
+  <div class="verse-block">
+    <div class="verse-ar">{{ v.ar }}</div>
+    <div class="verse-en">"{{ v.en }}"</div>
+    <span class="verse-ref">{{ v.ref }}</span>
+  </div>
+  {% endfor %}
+
+  <h2 class="section-head">{{ t('women_page.testimonies') }}</h2>
+  <p class="section-lead">{{ t('women_page.testimonies_sub') }}</p>
+
+  <div class="testimony-grid">
+    {% for tt in testimonies %}
+    <div class="testimony-card">
+      <div class="quote-mark">"</div>
+      <p class="testimony-quote">{{ tt.quote[lang] }}</p>
+      <div class="testimony-meta">
+        <strong>{{ tt.name }}</strong>
+        <span>{{ tt.country[lang] }}</span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="cta-row" style="margin-top:60px">
+    <a href="{{ url_for('index') }}" class="btn btn-ghost">← {{ t('women_page.back') }}</a>
+    <a href="{{ url_for('jesus_mary') }}" class="btn btn-primary">{{ t('nav.jesus') }} →</a>
+  </div>
+</div>
+
+{% endblock %}

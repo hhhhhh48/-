@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}{{ t('quran_page.title') }} — {{ site_name }}{% endblock %}
+{% block content %}
+
+<div class="container">
+  <h1 class="page-title">{{ t('quran_page.title') }}</h1>
+  <p class="page-subtitle">{{ t('quran_page.subtitle') }}</p>
+
+  <form method="get" class="search-box">
+    <input type="text" name="q" value="{{ q }}" placeholder="{{ t('quran_page.search') }}">
+    <button type="submit" class="btn btn-primary">{{ t('quran_page.search_btn') }}</button>
+  </form>
+
+  {% if results is not none %}
+    {% if results %}
+      <p style="text-align:center;color:var(--muted);margin-bottom:24px">
+        {{ results|length }} results for "{{ q }}"
+      </p>
+      {% for v in results %}
+      <div class="verse-block">
+        <div class="verse-block-num">
+          <a href="{{ url_for('surah_view', number=v['surah_number']) }}" style="color:var(--gold);text-decoration:none">
+            {{ v['surah_number'] }}:{{ v['number'] }}
+          </a>
+        </div>
+        <div class="verse-ar">{{ v['ar'] }}</div>
+        <div class="verse-en">"{{ v['en'] }}"</div>
+        {% if v['fr'] %}<div class="verse-en" style="opacity:.85">"{{ v['fr'] }}"</div>{% endif %}
+        {% if v['es'] %}<div class="verse-en" style="opacity:.7">"{{ v['es'] }}"</div>{% endif %}
+      </div>
+      {% endfor %}
+    {% else %}
+      <p style="text-align:center;color:var(--muted);padding:40px">No results.</p>
+    {% endif %}
+  {% else %}
+    <div class="surah-grid">
+      {% for s in surahs %}
+      <a href="{{ url_for('surah_view', number=s['number']) }}" class="surah-card">
+        <div class="surah-num">{{ s['number'] }}</div>
+        <div class="surah-info">
+          <h4>{{ s['name_en'] }}</h4>
+          <p>{{ s['name_ar'] }} · {{ s['verses_count'] }} · {{ s['place'] }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% if not surahs %}
+    <p style="text-align:center;color:var(--muted);padding:60px">
+      Database empty. Run: <code style="color:var(--gold)">python seed_quran.py</code>
+    </p>
+    {% endif %}
+  {% endif %}
+</div>
+
+{% endblock %}

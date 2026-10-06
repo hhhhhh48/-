@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}{{ t('god_page.title') }} — {{ site_name }}{% endblock %}
+{% block content %}
+
+<div class="container">
+  <h1 class="page-title">{{ t('god_page.title') }}</h1>
+  <p class="page-subtitle">{{ t('god_page.subtitle') }}</p>
+
+  {% for a in arguments %}
+  <div class="arg-block">
+    <div class="arg-head">
+      <div class="arg-num">{{ a.num }}</div>
+      <div class="arg-title">{{ a.title[lang] }}</div>
+    </div>
+    <p class="arg-content">{{ a.content[lang] }}</p>
+    <div class="arg-question">
+      <strong>{{ t('god_page.think') }}</strong>
+      {{ a.question[lang] }}
+    </div>
+    <div class="arg-verse">
+      <div class="ar">{{ a.verse_ar }}</div>
+      <div class="en">"{{ a.verse_en }}"</div>
+      <span class="ref">{{ a.verse_ref }}</span>
+    </div>
+  </div>
+  {% endfor %}
+
+  <div class="cta-row" style="margin-top:50px">
+    <a href="{{ url_for('index') }}" class="btn btn-ghost">← {{ t('god_page.back') }}</a>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}{{ t('convert_page.title') }} — {{ site_name }}{% endblock %}
+{% block content %}
+
+<div class="container">
+  <h1 class="page-title">{{ t('convert_page.title') }}</h1>
+  <p class="page-subtitle">{{ t('convert_page.subtitle') }}</p>
+
+  <div class="prose-block"><p>{{ intro[lang] }}</p></div>
+
+  <!-- ===== Steps ===== -->
+  <h2 class="section-head">{{ t('convert_page.steps') }}</h2>
+  <p class="section-lead">{{ t('convert_page.steps_sub') }}</p>
+
+  <div class="steps-grid">
+    {% for s in steps %}
+    <div class="step-card">
+      <div class="step-num">{{ s.icon }}</div>
+      <h3>{{ s.title[lang] }}</h3>
+      <p>{{ s.text[lang] }}</p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- ===== Shahada Box ===== -->
+  <h2 class="section-head">{{ t('convert_page.shahada') }}</h2>
+  <p class="section-lead">{{ t('convert_page.shahada_sub') }}</p>
+
+  <div class="shahada-box">
+    <div class="shahada-ar">أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ</div>
+    <div class="shahada-translit">Ash-hadu an la ilaha illa Allah, wa ash-hadu anna Muhammadan rasul Allah</div>
+    <div class="shahada-meaning">{{ t('convert_page.shahada_meaning') }}</div>
+  </div>
+
+  <!-- ===== After ===== -->
+  <h2 class="section-head">{{ t('convert_page.after') }}</h2>
+  <p class="section-lead">{{ t('convert_page.after_sub') }}</p>
+
+  <div class="rights-grid">
+    {% for a in after %}
+    <div class="right-item">
+      <span class="right-check">+</span>
+      {{ a[lang] }}
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- ===== Stories ===== -->
+  <h2 class="section-head">{{ t('convert_page.stories') }}</h2>
+  <p class="section-lead">{{ t('convert_page.stories_sub') }}</p>
+
+  <div class="story-grid">
+    {% for s in stories %}
+    <div class="story-card">
+      <div class="story-icon">★</div>
+      <h3>{{ s.name }}</h3>
+      <div class="story-role">{{ s.country[lang] }}</div>
+      <p>{{ s.story[lang] }}</p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- ===== Support ===== -->
+  <h2 class="section-head">{{ t('convert_page.support') }}</h2>
+  <p class="section-lead">{{ t('convert_page.support_sub') }}</p>
+
+  <div class="cta-row">
+    <a href="mailto:salam@thebeautyofislam.com" class="btn btn-primary">✉ {{ t('convert_page.email') }}</a>
+    <a href="{{ url_for('index') }}" class="btn btn-ghost">← {{ t('convert_page.back') }}</a>
+  </div>
+</div>
+
+{% endblock %}

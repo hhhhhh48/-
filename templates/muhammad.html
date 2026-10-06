@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %}{{ t('muhammad_page.title') }} — {{ site_name }}{% endblock %}
+{% block content %}
+
+<div class="container">
+  <h1 class="page-title">{{ t('muhammad_page.title') }}</h1>
+  <p class="page-subtitle">{{ t('muhammad_page.subtitle') }}</p>
+
+  <h2 class="section-head">{{ t('muhammad_page.life') }}</h2>
+  <p class="section-lead">{{ t('muhammad_page.life_sub') }}</p>
+
+  <div class="timeline">
+    {% for item in life %}
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">{{ item.year }}</div>
+      <h3 class="timeline-title">{{ item.title[lang] }}</h3>
+      <p class="timeline-text">{{ item.text[lang] }}</p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <h2 class="section-head">{{ t('muhammad_page.character') }}</h2>
+  <p class="section-lead">{{ t('muhammad_page.character_sub') }}</p>
+
+  <div class="trait-grid">
+    {% for c in character %}
+    <div class="trait-card">
+      <div class="trait-icon">{{ c.icon }}</div>
+      <h3>{{ c.title[lang] }}</h3>
+      <p>{{ c.text[lang] }}</p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <h2 class="section-head">{{ t('muhammad_page.verses') }}</h2>
+  <p class="section-lead"></p>
+
+  {% for v in verses %}
+  <div class="verse-block">
+    <div class="verse-ar">{{ v.ar }}</div>
+    <div class="verse-en">"{{ v.en }}"</div>
+    <span class="verse-ref">{{ v.ref }}</span>
+  </div>
+  {% endfor %}
+
+  <h2 class="section-head">{{ t('muhammad_page.testimonies') }}</h2>
+  <p class="section-lead">{{ t('muhammad_page.testimonies_sub') }}</p>
+
+  <div class="testimony-grid">
+    {% for tt in testimonies %}
+    <div class="testimony-card">
+      <div class="quote-mark">"</div>
+      <p class="testimony-quote">{{ tt.quote[lang] }}</p>
+      <div class="testimony-meta">
+        <strong>{{ tt.name }}</strong>
+        <span>{{ tt.source }}</span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <h2 class="section-head">{{ t('muhammad_page.with_nonmuslims') }}</h2>
+  <p class="section-lead">{{ t('muhammad_page.with_nonmuslims_sub') }}</p>
+
+  <div class="nm-grid">
+    {% for n in non_muslims %}
+    <div class="nm-card">
+      <div class="nm-icon">{{ n.icon }}</div>
+      <h3>{{ n.title[lang] }}</h3>
+      <p>{{ n.text[lang] }}</p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="cta-row" style="margin-top:60px">
+    <a href="{{ url_for('index') }}" class="btn btn-ghost">← {{ t('muhammad_page.back') }}</a>
+    <a href="{{ url_for('god_exists') }}" class="btn btn-primary">{{ t('nav.god') }} →</a>
+  </div>
+</div>
+
+{% endblock %}

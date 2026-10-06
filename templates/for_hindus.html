@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}Hindus Ke Liye — {{ site_name }}{% endblock %}
+{% block content %}
+
+<div class="container">
+  <h1 class="page-title">Hindus Ke Liye</h1>
+  <p class="page-subtitle">Tark aur dil ke zariye sach ki talash — koi zabardasti nahi.</p>
+
+  <div class="prose-block"><p>{{ intro[lang] if lang in intro else intro['en'] }}</p></div>
+
+  <h2 class="section-head">10 Sawal — Sochne Ke Liye</h2>
+  <p class="section-lead">Har sawal ke saath Quran se jawab bhi.</p>
+
+  {% for q in questions %}
+  <div class="arg-block">
+    <div class="arg-head">
+      <div class="arg-num">{{ q.num }}</div>
+      <div class="arg-title">{{ q.title[lang] if lang in q.title else q.title['en'] }}</div>
+    </div>
+    <p class="arg-content">{{ q.text[lang] if lang in q.text else q.text['en'] }}</p>
+    <div class="arg-verse">
+      <div class="ar">{{ q.verse_ar }}</div>
+      <div class="en">"{{ q.verse_en }}"</div>
+      <span class="ref">{{ q.ref }}</span>
+    </div>
+  </div>
+  {% endfor %}
+
+  <h2 class="section-head">Hindu Dharam Aur Islam — Farq</h2>
+  <p class="section-lead">Ek nazar mein.</p>
+
+  <div class="comp-table-wrap">
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Mauzoo</th>
+          <th>Hindu Dharam</th>
+          <th>Islam</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in comparison %}
+        <tr>
+          <td class="topic">{{ row.topic[lang] if lang in row.topic else row.topic['en'] }}</td>
+          <td class="gospel">{{ row.hindu[lang] if lang in row.hindu else row.hindu['en'] }}</td>
+          <td class="islam">{{ row.islam[lang] if lang in row.islam else row.islam['en'] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="message-box" style="margin-top:60px">
+    <div class="message-icon">☾</div>
+    <p style="font-size:1.1rem">Agar aap sach ke talash mein hain, dil se kahein: <strong style="color:var(--gold)">"Aye Khaliq, mujhe hidayat de."</strong> — Allah zarur sunta hai.</p>
+  </div>
+
+  <div class="cta-row" style="margin-top:40px">
+    <a href="{{ url_for('index') }}" class="btn btn-ghost">← Wapas</a>
+    <a href="{{ url_for('god_exists') }}" class="btn btn-primary">Kya Allah Hai? →</a>
+  </div>
+</div>
+
+{% endblock %}

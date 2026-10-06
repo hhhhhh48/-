@@ -1,0 +1,132 @@
+{
+  "site_name": "The Beauty of Islam",
+  "nav": {
+    "home": "Home",
+    "god": "Does God Exist?",
+    "muhammad": "Muhammad ﷺ",
+    "jesus": "Jesus & Mary",
+    "women": "Women in Islam",
+    "convert": "Become Muslim",
+    "quran": "Quran",
+    "hadiths": "Hadiths"
+  },
+  "hero": {
+    "badge": "2026 · Discover",
+    "title": "Who is God?",
+    "subtitle": "Discover the beauty of Islam through reason and heart.",
+    "cta1": "Begin the Journey",
+    "cta2": "Read the Quran",
+    "owner": "Owner: Ouachemi Muhammad"
+  },
+  "cards": {
+    "god_title": "Does God Exist?",
+    "god_desc": "Sixteen rational proofs that point to a Creator — reasoned, not preached.",
+    "muhammad_title": "Who is Muhammad?",
+    "muhammad_desc": "The life, character, and legacy of mercy of the final Prophet.",
+    "jesus_title": "Jesus & Mary",
+    "jesus_desc": "Their honored place in the Quran — loved, but not deified.",
+    "women_title": "Women in Islam",
+    "women_desc": "Answering common misconceptions with evidence and dignity.",
+    "explore": "Explore"
+  },
+  "god_page": {
+    "title": "Does God Exist?",
+    "subtitle": "Sixteen rational reflections for the honest seeker.",
+    "think": "Ponder this:",
+    "back": "Back to Home"
+  },
+  "muhammad_page": {
+    "title": "Who is Muhammad ﷺ?",
+    "subtitle": "The man whose character changed the world — a mercy to all nations.",
+    "life": "His Life",
+    "life_sub": "Seven defining moments in the Prophet's journey.",
+    "character": "His Character",
+    "character_sub": "Eight virtues that shaped a civilization.",
+    "testimonies": "What Non-Muslim Scholars Say",
+    "testimonies_sub": "Testimonies from Western historians and thinkers.",
+    "with_nonmuslims": "His Dealings with Non-Muslims",
+    "with_nonmuslims_sub": "Justice, mercy, and honor — beyond faith.",
+    "verses": "Verses About Him in the Quran",
+    "back": "Back to Home"
+  },
+  "jesus_page": {
+    "title": "Jesus & Mary in Islam",
+    "subtitle": "Honored beyond measure — but not deified.",
+    "jesus_place": "The Place of Jesus",
+    "mary_place": "The Place of Mary",
+    "surah_maryam": "Surah Maryam (Chapter 19)",
+    "surah_maryam_sub": "The most beautiful verses about Mary and her son in the Quran.",
+    "verses": "25 Verses About Jesus & Mary",
+    "verses_sub": "Mentioned in the Quran across multiple chapters.",
+    "comparison": "Islam & the Gospels",
+    "comparison_sub": "Where they agree — and where they differ.",
+    "message": "A Message to Our Christian Readers",
+    "islam_col": "Islam",
+    "gospel_col": "The Gospels",
+    "topic_col": "Topic",
+    "read_more": "Read the Quran",
+    "back": "Back to Home"
+  },
+  "footer": {
+    "shahada": "There is no god but Allah, and Muhammad is His Messenger",
+    "rights": "All rights reserved.",
+    "owner": "Owner: Ouachemi Muhammad",
+    "made_in": "Made in Algeria"
+  },
+  "women_page": {
+    "title": "Women in Islam",
+    "subtitle": "Dignity, honor, and rights - from the source.",
+    "misconceptions": "Six Common Misconceptions",
+    "misconceptions_sub": "Honest answers to the most repeated claims.",
+    "claim": "The Claim",
+    "answer": "The Answer",
+    "stories": "Women of Islam",
+    "stories_sub": "Three women who shaped a civilization.",
+    "rights": "Rights Guaranteed by Islam",
+    "rights_sub": "Long before modern charters.",
+    "verses": "Verses About Women in the Quran",
+    "verses_sub": "From the source itself.",
+    "testimonies": "Western Women Who Embraced Islam",
+    "testimonies_sub": "Their own words.",
+    "back": "Back to Home"
+  },
+  "convert_page": {
+    "title": "How to Become Muslim",
+    "subtitle": "A simple, sincere path - no intermediaries, no fees.",
+    "steps": "Four Simple Steps",
+    "steps_sub": "From belief to belonging.",
+    "shahada": "The Shahada - Testimony of Faith",
+    "shahada_sub": "Pronounce it with full sincerity to become Muslim.",
+    "shahada_meaning": "I bear witness that there is no god but Allah, and I bear witness that Muhammad is the Messenger of Allah.",
+    "after": "What to Do After",
+    "after_sub": "The first steps on your new journey.",
+    "stories": "Muslims Who Came Before You",
+    "stories_sub": "Their journeys may inspire yours.",
+    "support": "Need Support?",
+    "support_sub": "We are here to help you - reach out any time.",
+    "email": "Contact Us",
+    "back": "Back"
+  },
+  "quran_page": {
+    "title": "The Holy Quran",
+    "subtitle": "114 chapters - God's final revelation to humanity.",
+    "search": "Search the Quran...",
+    "search_btn": "Search",
+    "back": "Back to Quran"
+  },
+  "hadiths_page": {
+    "title": "Selected Hadiths",
+    "subtitle": "100 authentic sayings of Prophet Muhammad.",
+    "all": "All",
+    "ethics": "Ethics",
+    "mercy": "Mercy",
+    "knowledge": "Knowledge",
+    "family": "Family",
+    "nonmuslims": "Non-Muslims",
+    "search": "Search hadiths...",
+    "count": "hadiths",
+    "narrator": "Narrator",
+    "source": "Source"
+  },
+  "tagline": "Discover the beauty of Islam through reason and heart."
+}

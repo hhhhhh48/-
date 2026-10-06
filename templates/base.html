@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}{{ site_name }}{% endblock %}</title>
+<link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='logo.svg') }}">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<header>
+  <nav class="nav">
+    <a href="{{ url_for('index') }}" class="brand">
+      <img src="{{ url_for('static', filename='logo.svg') }}" alt="logo" class="brand-logo">
+      <span>{{ site_name }}</span>
+    </a>
+    <div class="nav-links">
+      <a href="{{ url_for('index') }}">{{ t('nav.home') }}</a>
+      <a href="{{ url_for('god_exists') }}">{{ t('nav.god') }}</a>
+      <a href="{{ url_for('muhammad') }}">{{ t('nav.muhammad') }}</a>
+      <a href="{{ url_for('jesus_mary') }}">{{ t('nav.jesus') }}</a>
+      <a href="{{ url_for('women') }}">{{ t('nav.women') }}</a>
+      <a href="{{ url_for('for_hindus') }}">For Hindus</a>
+      <a href="{{ url_for('quran') }}">{{ t('nav.quran') }}</a>
+      <a href="{{ url_for('hadiths') }}">{{ t('nav.hadiths') }}</a>
+      <a href="{{ url_for('convert') }}">{{ t('nav.convert') }}</a>
+    </div>
+    <div class="lang-switch">
+      <a href="/set-lang/en" class="{% if lang=='en' %}active{% endif %}">EN</a>
+      <a href="/set-lang/fr" class="{% if lang=='fr' %}active{% endif %}">FR</a>
+      <a href="/set-lang/es" class="{% if lang=='es' %}active{% endif %}">ES</a>
+      <a href="/set-lang/de" class="{% if lang=='de' %}active{% endif %}">DE</a>
+      <a href="/set-lang/it" class="{% if lang=='it' %}active{% endif %}">IT</a>
+      <a href="/set-lang/pt" class="{% if lang=='pt' %}active{% endif %}">PT</a>
+      <a href="/set-lang/hi" class="{% if lang=='hi' %}active{% endif %}">HI</a>
+      <a href="/set-lang/ar" class="{% if lang=='ar' %}active{% endif %}">AR</a>
+    </div>
+  </nav>
+</header>
+
+<main>{% block content %}{% endblock %}</main>
+
+<footer>
+  <div class="footer-brand">
+    <img src="{{ url_for('static', filename='logo.svg') }}" alt="logo" class="footer-logo">
+    <div class="footer-tagline">{{ t('tagline') }}</div>
+  </div>
+
+  <div class="shahada">{{ t('footer.shahada') }}</div>
+
+  <div class="owner-line">{{ t('footer.owner') }}</div>
+
+  <div class="made-in-algeria">
+    <span class="dz-flag">🇩🇿</span>
+    {{ t('footer.made_in') }}
+    <span class="dz-flag">🇩🇿</span>
+  </div>
+
+  <div class="copyright">© 2026 {{ site_name }} — {{ t('footer.rights') }}</div>
+</footer>
+
+</body>
+</html>
