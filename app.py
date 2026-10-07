@@ -17,6 +17,22 @@ DB_PATH = os.path.join(BASE, "beauty.db")
 LANGS = ["en", "fr", "es", "de", "it", "pt", "hi", "ar"]
 
 ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "washmi2026")
+
+# IPs تستثنى من الإحصائيات (ضع IPك هنا - يمكن إضافتها في Render)
+EXCLUDE_IPS = set(filter(None, os.environ.get("EXCLUDE_IPS", "").split(",")))
+
+# كلمات تشير إلى أن الزائر بوت
+BOT_KEYWORDS = (
+    "bot", "crawler", "spider", "crawl", "slurp", "bingpreview",
+    "facebookexternalhit", "twitterbot", "whatsapp", "telegrambot",
+    "googlebot", "yandex", "duckduckbot", "baiduspider", "sogou",
+    "exabot", "ia_archiver", "semrush", "ahrefs", "mj12bot",
+    "dotbot", "petalbot", "applebot", "discordbot", "linkedinbot",
+    "pinterest", "slackbot", "embedly", "quora link preview",
+    "outbrain", "w3c_validator", "lighthouse", "pingdom",
+    "uptimerobot", "statuscake", "headlesschrome", "phantomjs",
+    "python-requests", "python-urllib", "curl/", "wget/", "go-http",
+)
 SECRET_SALT = os.environ.get("SECRET_SALT", "boi-salt-change-me")
 
 app = Flask(__name__)
@@ -52,6 +68,19 @@ def t(key, lang=None):
                 cur = cur.get(p2, key) if isinstance(cur, dict) else key
             return cur
     return cur
+
+
+def is_bot(user_agent):
+    """Detect if visitor is a bot/crawler."""
+    if not user_agent:
+        return True
+    ua = user_agent.lower()
+    return any(kw in ua for kw in BOT_KEYWORDS)
+
+
+def is_self_visit(ip):
+    """Check if this is the admin's own IP."""
+    return ip in EXCLUDE_IPS
 
 
 def hash_ip(ip):
@@ -109,16 +138,18 @@ def set_lang_and_track():
             not request.path.startswith("/admin") and
             not request.path.startswith("/favicon") and
             request.path not in ("/robots.txt",)):
-            conn = get_db()
             ip = request.headers.get("X-Forwarded-For", request.remote_addr or "0.0.0.0").split(",")[0].strip()
             ua = request.headers.get("User-Agent", "")[:200]
             ref = request.headers.get("Referer", "")[:200]
-            conn.execute("""INSERT INTO visitors
-                (ip_hash, path, lang, user_agent, referer, country)
-                VALUES (?,?,?,?,?,?)""",
-                (hash_ip(ip), request.path[:200], lang, ua, ref, get_country(ip)))
-            conn.commit()
-            conn.close()
+            # تجاهل البوتات والزيارات الشخصية
+            if not is_bot(ua) and not is_self_visit(ip):
+                conn = get_db()
+                conn.execute("""INSERT INTO visitors
+                    (ip_hash, path, lang, user_agent, referer, country)
+                    VALUES (?,?,?,?,?,?)""",
+                    (hash_ip(ip), request.path[:200], lang, ua, ref, get_country(ip)))
+                conn.commit()
+                conn.close()
     except Exception:
         pass
 
