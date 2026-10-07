@@ -58,15 +58,40 @@ def hash_ip(ip):
     return hashlib.sha256((ip + SECRET_SALT).encode()).hexdigest()[:16]
 
 
-def get_country():
-    """Guess country from Accept-Language header."""
+import urllib.request
+
+@lru_cache(maxsize=4096)
+def country_from_ip(ip):
+    """Get country code from IP using ipapi.co (free, no key needed)."""
+    if not ip or ip in ("127.0.0.1", "0.0.0.0", "::1"):
+        return "Unknown"
+    if ip.startswith(("10.", "192.168.", "172.")):
+        return "Local"
+    try:
+        url = f"https://ipapi.co/{ip}/country/"
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=2) as r:
+            code = r.read().decode().strip()
+            if len(code) == 2 and code.isalpha():
+                return code.upper()
+    except Exception:
+        pass
+    return "Unknown"
+
+
+def get_country(ip=None):
+    """Detect country from IP (best) or Accept-Language (fallback)."""
+    if ip:
+        c = country_from_ip(ip)
+        if c not in ("Unknown", ""):
+            return c
+    # Fallback: Accept-Language
     al = request.headers.get("Accept-Language", "")
     if not al: return "Unknown"
-    # Take first language tag
     first = al.split(",")[0].split(";")[0].strip()
     if "-" in first:
         return first.split("-")[1].upper()
-    return first.upper() if first else "Unknown"
+    return "Unknown"
 
 
 @app.before_request
@@ -91,7 +116,7 @@ def set_lang_and_track():
             conn.execute("""INSERT INTO visitors
                 (ip_hash, path, lang, user_agent, referer, country)
                 VALUES (?,?,?,?,?,?)""",
-                (hash_ip(ip), request.path[:200], lang, ua, ref, get_country()))
+                (hash_ip(ip), request.path[:200], lang, ua, ref, get_country(ip)))
             conn.commit()
             conn.close()
     except Exception:
