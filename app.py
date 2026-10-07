@@ -204,7 +204,7 @@ def admin():
             session["admin"] = True
             return redirect(url_for("admin"))
         else:
-            return render_template("admin.html", error="Wrong password", stats=None, logged=False)
+            return render_template("admin.html", error="كلمة المرور خطأ", stats=None, logged=False)
 
     if not session.get("admin"):
         return render_template("admin.html", stats=None, logged=False)
@@ -217,6 +217,8 @@ def admin():
     today = c.execute("SELECT COUNT(*) FROM visitors WHERE date(visited_at) = date('now')").fetchone()[0]
     unique_today = c.execute("SELECT COUNT(DISTINCT ip_hash) FROM visitors WHERE date(visited_at) = date('now')").fetchone()[0]
     week = c.execute("SELECT COUNT(*) FROM visitors WHERE visited_at >= datetime('now', '-7 days')").fetchone()[0]
+    month = c.execute("SELECT COUNT(*) FROM visitors WHERE visited_at >= datetime('now', '-30 days')").fetchone()[0]
+    online = c.execute("SELECT COUNT(DISTINCT ip_hash) FROM visitors WHERE visited_at >= datetime('now', '-5 minutes')").fetchone()[0]
 
     top_pages = c.execute("""
         SELECT path, COUNT(*) as cnt FROM visitors
@@ -230,8 +232,8 @@ def admin():
 
     top_countries = c.execute("""
         SELECT country, COUNT(*) as cnt FROM visitors
-        WHERE country != 'Unknown' AND country != ''
-        GROUP BY country ORDER BY cnt DESC LIMIT 15
+        WHERE country != 'Unknown' AND country != '' AND country IS NOT NULL
+        GROUP BY country ORDER BY cnt DESC LIMIT 20
     """).fetchall()
 
     daily = c.execute("""
@@ -251,7 +253,7 @@ def admin():
     stats = {
         "total": total, "unique": unique,
         "today": today, "unique_today": unique_today,
-        "week": week,
+        "week": week, "month": month, "online": online,
         "top_pages": top_pages,
         "top_langs": top_langs,
         "top_countries": top_countries,
